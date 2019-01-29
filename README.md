@@ -1,2 +1,4 @@
 # Huffman-Coding
 C program which uses Huffman coding to encode a text file, can then decode this file back into a text file. Takes a training file of text to compute the frequency of characters and how to encode them. The training file may or may not be the file to be encoded.
+
+The program uses the ADT in bitfile.c to write encoded files and read from decoded files. The read bit functionality takes a byte from the file and puts it into a buffer, so when the function is called it may return the next bit in the buffer. This allows the encoded file to be read bit by bit, which is useful as the huffman decoder must follow the huffman tree bit-by-bit. Likewise the write bit functionality allows encoded characters of any bit length to be written to the bitfile bit-by-bit, so that encoded characters may cross byte boundaries without the huffman coder needing to know exacty how.
